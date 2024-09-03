@@ -1,0 +1,68 @@
+/* CSS Styles */
+body, html {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.battery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.battery {
+    width: 200px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.battery-level {
+    height: 100%;
+    background-color: rgb(51, 212, 51);
+    border-radius: 3px;
+    transition: width 0.3s, height 0.3s;
+}
+
+.percentage {
+    margin-top: 10px;
+}
+
+.device-icon {
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+#responsive-checkbox {
+    margin-top: 20px;
+}
+
+/* CSS Media Query for phone/laptop icon */
+@media (max-width: 375px) {
+    .device-icon::before {
+        content: '📱';
+    }
+}
+
+@media (min-width: 376px) {
+    .device-icon::before {
+        content: '💻';
+    }
+}
+
+/* CSS Media Query for vertical battery (fallback if JS is disabled) */
+@media (max-width: 375px) {
+    .battery {
+        width: 50px;
+        height: 200px;
+        flex-direction: column;
+    }
+}
